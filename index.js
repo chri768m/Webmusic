@@ -3,6 +3,7 @@ Vue.createApp({
     data(){
         return {
             Records: [],
+            ArtistToGetBy:"",
             singleRecord: null,
             idToGetBy: 0,
             deleteId: 0,
@@ -19,8 +20,13 @@ Vue.createApp({
         getAllRecords() {
             this.helperGetAndShow(baseUrl)
         },
-       
-        async helperGetAndShow(url) { // helper metode: getAllCar + getByVendor are very similar
+        
+        // getByArtist(artist) { Virker ikke pga database???
+        //     const url = baseUrl + "?artist=" + artist
+        //     this.helperGetAndShow(url)
+        // },
+
+        async helperGetAndShow(url) { // helper metode: getAllRecords + getByArtist are very similar
             try {
                 const response = await axios.get(url)
                 this.Records = await response.data

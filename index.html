@@ -17,7 +17,10 @@
     <div id="app">
         <h2>Get All etc (GET)</h2>
         <button id="getAllButton" v-on:click="getAllRecords" class="btn btn-primary">Get all Records</button>
-        <br />
+
+        <!-- <br /> Virker ikke pga database???
+        <input v-model="ArtistToGetBy" placeholder="artist" type="text" />
+        <button v-on:click="getByArtist(ArtistToGetBy)" class="btn btn-primary">Get by Artist</button> -->
     
         <ul id="RecordsList" v-if="Records.length">
             <li v-for="Record in Records">
